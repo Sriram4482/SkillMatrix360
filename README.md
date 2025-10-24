@@ -41,14 +41,14 @@ This application follows an **admin-managed user system**:
 
 **Demo Admin Account:**
 \`\`\`
-Email: admin@orgmanage.com
-Password: admin123
+Email: admin1234@.com
+Password: password123
 \`\`\`
 
 **Demo User Account:**
 \`\`\`
-Email: user@orgmanage.com  
-Password: user123
+Email: user1234@.com  
+Password: user1234
 \`\`\`
 
 ## 🛠 Tech Stack
