@@ -20,6 +20,12 @@ export default function Sidebar() {
     { label: "Organizations", to: "/orgs", icon: "🏢" },
   ];
 
+  const toggleDarkMode = () => {
+  const newDarkMode = !darkMode;
+  setDarkMode(newDarkMode);
+  localStorage.setItem('darkMode', newDarkMode);
+};
+
   // Apply dark mode to entire app
   useEffect(() => {
     if (darkMode) {
