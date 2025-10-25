@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api", // your backend must run here
+  baseURL: "https://skillmatrix360-backend.onrender.com/api",
 });
 
 export default api;

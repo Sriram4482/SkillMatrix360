@@ -22,6 +22,28 @@ app.use("/api/auth", authRoutes);
 app.use("/api", orgRoutes);
 app.use("/api/users", userRoutes);
 
+// Add after your routes, before error middleware
+const createDemoUser = async () => {
+  try {
+    const bcrypt = require('bcryptjs');
+    const existingUser = await User.findOne({ where: { email: 'admin@orgmanage.com' } });
+    
+    if (!existingUser) {
+      const hashedPassword = await bcrypt.hash('admin123', 10);
+      await User.create({
+        name: 'Admin User',
+        email: 'admin@orgmanage.com', 
+        password: hashedPassword,
+        role: 'admin'
+      });
+      console.log('✅ DEMO USER CREATED');
+    }
+  } catch (error) {
+    console.error('Error creating demo user:', error);
+  }
+};
+createDemoUser();
+
 // Error handler
 app.use(errorMiddleware);
 
