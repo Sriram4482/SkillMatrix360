@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
+  baseURL: "https://skillmatrix360-backend.onrender.com/api", // Hardcoded production URL
 });
 
 // Add token to requests
