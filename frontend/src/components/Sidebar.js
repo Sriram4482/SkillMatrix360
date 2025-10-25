@@ -38,14 +38,13 @@ export default function Sidebar() {
   }, [darkMode]);
 
  const handleLogout = () => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('user');
-  localStorage.removeItem('darkMode');
-  
-  // Use hard navigation that works in production
-  window.location.href = window.location.origin + '/#/login';
-  // Force reload to clear React state
-  window.location.reload();
+  localStorage.clear();
+  // Hard navigation that always works
+  if (window.location.href.includes('render.com')) {
+    window.location.href = 'https://skillmatrix360-frontend.onrender.com/login';
+  } else {
+    window.location.href = '/login';
+  }
 };
 
   return (
