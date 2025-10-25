@@ -31,16 +31,16 @@ export default function Sidebar() {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("darkMode"); // Optional: clear dark mode preference on logout
-    window.location.href = "/login";
-  };
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+ const handleLogout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  localStorage.removeItem('darkMode');
+  
+  // Use hard navigation that works in production
+  window.location.href = window.location.origin + '/#/login';
+  // Force reload to clear React state
+  window.location.reload();
+};
 
   return (
     <aside className="w-64 bg-gradient-to-b from-slate-800 to-slate-900 dark:from-gray-900 dark:to-gray-800 h-screen sticky top-0 flex flex-col shadow-xl">

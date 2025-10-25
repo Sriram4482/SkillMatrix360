@@ -16,6 +16,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/orgs" element={<Organizations />} />
+          
+          {/* ⭐ ADD CATCH-ALL ROUTE ⭐ */}
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </Router>
       <ToastContainer 
