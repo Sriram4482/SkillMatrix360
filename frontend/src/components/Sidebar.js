@@ -39,12 +39,10 @@ export default function Sidebar() {
 
  const handleLogout = () => {
   localStorage.clear();
-  // Hard navigation that always works
-  if (window.location.href.includes('render.com')) {
-    window.location.href = 'https://skillmatrix360-frontend.onrender.com/login';
-  } else {
-    window.location.href = '/login';
-  }
+  // Use HashRouter navigation
+  window.location.href = '/#/login';
+  // OR
+  window.location.reload();
 };
 
   return (
